@@ -7,7 +7,6 @@ How to do a video for Orix (with Oric HD):
 
 Source code of Displaying a video
 
-
 * Download VLC
 * you need pictconv (OSDK package)
 * you need XA (OSDK package)
