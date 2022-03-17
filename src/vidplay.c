@@ -4,7 +4,9 @@
 #include "version.h"
 
 extern void play();
-
+unsigned char header[20];
+  unsigned int sizeframe=0;
+  unsigned int numberofframes=0;
 
 
 unsigned char version_opt=0;
@@ -49,6 +51,8 @@ unsigned char getopts(char *arg)
 int main(int argc,char *argv[])
 {
   FILE *fp;
+
+  
 
   unsigned char i,ret,found_a_folder_in_arg_found=0;
 
@@ -106,7 +110,21 @@ tgi_install (tgi_static_stddrv);
 
 tgi_init ();
 tgi_clear ();
-printf("Playing ... : %s ",argv[1]);  
+printf("Playing ... : %s ",argv[1]); 
+
+/*
+
+fread(header, 8, 1, fp );
+
+sizeframe=header[6]+header[7]*256;
+numberofframes=header[4]+header[5]*256;
+
+
+//printf("Playing ... : %s sizeframe : %d",argv[1],sizeframe); 
+
+while (1)
+fread(0xa000, sizeframe, 1, fp );    
+  */
 play();
 fclose(fp);
   
