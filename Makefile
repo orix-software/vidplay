@@ -26,4 +26,3 @@ vidplay:
         mkdir build/usr/share/man -p
 	@echo "Create .hlp"
 	cat docs/vidplay.md | ../md2hlp/src/md2hlp.py3 -c docs/md2hlp.cfg > build/usr/share/man/vidplay.hlp
-
